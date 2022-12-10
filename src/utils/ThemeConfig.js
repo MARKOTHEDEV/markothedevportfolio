@@ -1,41 +1,24 @@
 import { createGlobalStyle} from 'styled-components'
 
 
-export const lightTheme = {
-
+export const theme = {
+  'dark':'#151515',
+  'lightDark':'##242424',
+  'green':'#4EE1A0',
+  'ash':'##d9d9d9',
+  'light':'#FFFFFF'
 }
-
-export const darkTheme = {
-}
-
 
 export const GlobalStyles = createGlobalStyle`
-  @font-face{
-    font-family: 'SpaceGroteskBold';
-    src: url('../assets/fonts/static/SpaceGrotesk-Bold.ttf') format('truetype');
-    font-weight:normal;
-    font-style: normal;
-  }
-
-
-  @font-face{
-    font-family: 'SpaceGroteskMedium';
-    src: url('../assets/fonts/static/SpaceGrotesk-Medium.ttf') format('truetype');
-    font-weight:bold;
-    font-style: normal;
-  }
-
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
   body {
+    color: ${theme.light};
     transition: all 0.50s linear;
-    font-family: 'SpaceGroteskBold';
-  }
-  h1,h2, h3 ,h4 ,h5{
-    font-family: 'SpaceGroteskMedium';
+    background-color: ${theme.dark};
   }
 
   li{
@@ -69,15 +52,3 @@ a{
 }
 `
 
-
-const view = `"{
-  "items":
-  [
-    {
-      "id":"2",
-      "name":"Baby Spinach",
-      "slug":"baby-spinach","unit":"2Pfund","is_digital":false,
-      "image":"https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/2/conversions/BabySpinach-thumbnail.jpg",
-      "stock":10,"price":0.6,"quantity":1,"itemTotal":0.6
-    }],
-    "isEmpty":false,"totalItems":1,"totalUniqueItems":1,"total":0.6,"meta":null}"`

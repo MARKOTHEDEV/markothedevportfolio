@@ -5,7 +5,7 @@ export const theme = {
   'dark':'#151515',
   'lightDark':'##242424',
   'green':'#4EE1A0',
-  'ash':'##d9d9d9',
+  'ash':'#d9d9d9',
   'light':'#FFFFFF'
 }
 

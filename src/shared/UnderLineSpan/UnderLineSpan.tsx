@@ -3,12 +3,13 @@ import { UnderLineSpanContainer } from './UnderLineSpan.style'
 
 type Prop = React.PropsWithChildren<{
 
-    giveSpace?:boolean
+    giveSpace?:boolean;
+  small_border?:boolean;
 }>
-const UnderLineSpan =({children,giveSpace=false}:Prop):React.ReactElement=>{
+const UnderLineSpan =({children,giveSpace=false,small_border=false}:Prop):React.ReactElement=>{
 
   return (
-    <UnderLineSpanContainer style={{'paddingBottom':giveSpace?'.2rem':'unset'}}>
+    <UnderLineSpanContainer small_border={small_border} style={{'paddingBottom':giveSpace?'.5rem':'unset'}}>
       {
         children
       }

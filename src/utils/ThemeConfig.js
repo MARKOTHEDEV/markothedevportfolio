@@ -6,7 +6,8 @@ export const theme = {
   'lightDark':'##242424',
   'green':'#4EE1A0',
   'ash':'#d9d9d9',
-  'light':'#FFFFFF'
+  'light':'#FFFFFF',
+  'maxWidth':'1000px'
 }
 
 export const GlobalStyles = createGlobalStyle`

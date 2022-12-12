@@ -4,7 +4,9 @@ import styled from 'styled-components';
 
 export const NavContainer = styled.div`
     /* border: 1px solid red; */
+    margin: 0 auto;
     text-align: center;
+    max-width: ${({theme})=>theme.maxWidth};
     padding: 1rem;
     h2{
         padding-bottom: 1.4rem;
@@ -33,5 +35,9 @@ export const NavContainer = styled.div`
             padding: unset;
         }
         
+    }
+
+    @media screen and (min-width: 900px) {
+        /* padding:  1rem 40px; */
     }
 `

@@ -62,6 +62,13 @@ export const HeroSectionContainer = styled.div`
             left: -40px;
             }
         }
+
+        
+    @media screen and (min-width: 1006px) {
+        /* opx removed img that we had before */
+        background-size: 0px,150px;
+    
+    }
 `
 export const HeroContentContainer= styled.div`
 /* border: 1px solid yellow; */
@@ -81,7 +88,12 @@ p{
     font-size: 1.2rem;
     color: ${({theme})=>theme.light};
     letter-spacing: 3px;
-
+    cursor: pointer;
+    transition: .5s color ease-in-out;
+    display: inline-block;
+    &:hover{
+        color:  ${({theme})=>theme.green};
+    }
 }
 
 @media screen and (min-width: 600px){   

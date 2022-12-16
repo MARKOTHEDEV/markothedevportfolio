@@ -8,6 +8,8 @@ export const NavContainer = styled.div`
     text-align: center;
     max-width: ${({theme})=>theme.maxWidth};
     padding: 1rem;
+    position: relative;
+    z-index: 10;
     h2{
         padding-bottom: 1.4rem;
     }

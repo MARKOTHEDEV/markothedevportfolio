@@ -20,7 +20,7 @@ const Projects = ():React.ReactElement=>{
         </UnderLineSpan>
         
       </ProjectsHeaderContainer>
-
+      <br /><br />
       <ListOFProject>
         <PortfolioDisplay accessVariant={isTab?'hover':'static'}/>
         <PortfolioDisplay accessVariant={isTab?'hover':'static'}/>

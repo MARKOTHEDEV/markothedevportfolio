@@ -6,9 +6,9 @@ import { ListOFProject, ProjectsContainer, ProjectsHeaderContainer } from './Pro
 
 
 const Projects = ():React.ReactElement=>{
-  // const isTab = useMediaQuery({
-  //   query: '(min-width: 600px)'
-  // })
+  const isTab = useMediaQuery({
+    query: '(min-width: 800px)'
+  })
 
   return (
     <ProjectsContainer>
@@ -22,9 +22,11 @@ const Projects = ():React.ReactElement=>{
       </ProjectsHeaderContainer>
 
       <ListOFProject>
-        <PortfolioDisplay/>
-        <PortfolioDisplay/>
-        <PortfolioDisplay/>
+        <PortfolioDisplay accessVariant={isTab?'hover':'static'}/>
+        <PortfolioDisplay accessVariant={isTab?'hover':'static'}/>
+        <PortfolioDisplay accessVariant={isTab?'hover':'static'}/>
+        <PortfolioDisplay accessVariant={isTab?'hover':'static'}/>
+        
       </ListOFProject>
 
      

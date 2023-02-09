@@ -1,19 +1,29 @@
-import { MainPortfolioImageContainer, PortfolioContent, PortfolioDisplayContainer } from './PortfolioDisplay.style'
+import { MainPortfolioImageContainer,PortfolioImageCover, PortfolioContent, PortfolioDisplayContainer } from './PortfolioDisplay.style'
 import Projectdummy from '../../assets/images/projectdummy.webp'
 import UnderLineSpan from '../UnderLineSpan/UnderLineSpan'
 
 
-
-const PortfolioDisplay = ():React.ReactElement=>{
+type Prop ={
+  accessVariant?:'hover'|'static'
+}
+const PortfolioDisplay = ({accessVariant='static'}:Prop):React.ReactElement=>{
 
   return (
     <PortfolioDisplayContainer>
       <MainPortfolioImageContainer>
         <img src={Projectdummy} alt="" />
-        {/* <PortfolioImageCover className='PortfolioImageCover'>
-            <p>VIEW PROJECt</p>
-            <p>VIEW CODE</p>
-          </PortfolioImageCover> */}
+        {
+          accessVariant=='hover'?
+            <PortfolioImageCover className='PortfolioImageCover'>
+              <UnderLineSpan giveSpace small_border={true} >
+                <p>VIEW PROJECT </p>
+              </UnderLineSpan>
+
+              <UnderLineSpan giveSpace small_border={true} >
+                <p>VIEW CODE</p>
+              </UnderLineSpan>
+            </PortfolioImageCover>:''
+        }
       </MainPortfolioImageContainer>
         
 
@@ -23,16 +33,17 @@ const PortfolioDisplay = ():React.ReactElement=>{
           <p>HTML</p>
           <p>CSS</p>
         </div>
-       
-        <div className='porfolio_view_container'>
-          <UnderLineSpan giveSpace small_border={true} >
-            <p>VIEW PROJECT </p>
-          </UnderLineSpan>
-
-          <UnderLineSpan giveSpace small_border={true} >
-            <p>VIEW CODE</p>
-          </UnderLineSpan>
-        </div>
+        {
+          accessVariant=='static'?
+            <div className='porfolio_view_container'>
+              <UnderLineSpan giveSpace small_border={true} >
+                <p>VIEW PROJECT </p>
+              </UnderLineSpan>
+              <UnderLineSpan giveSpace small_border={true} >
+                <p>VIEW CODE</p>
+              </UnderLineSpan>
+            </div>:''
+        }
       </PortfolioContent>
 
     </PortfolioDisplayContainer>

@@ -36,9 +36,9 @@ export const ListOFProject =styled.div`
 @media screen and (min-width: 500px){
     display: grid;
     grid-template-columns: repeat(2,1fr);
-    gap:0 10px;
+    gap: 10px;
 }
 @media screen and (min-width: 600px){
-    gap:0 30px;
+    gap:30px 30px;
 }
 `

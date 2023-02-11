@@ -1,7 +1,9 @@
 import { useMediaQuery } from 'react-responsive'
-import PortfolioDisplay from '../PortfoilioDisplay/PortfolioDisplay'
+import PortfolioDisplay, { PortfolioDisplayProp } from '../PortfoilioDisplay/PortfolioDisplay'
 import UnderLineSpan from '../UnderLineSpan/UnderLineSpan'
 import { ListOFProject, ProjectsContainer, ProjectsHeaderContainer } from './Projects.style'
+import Projectdummy from '../../assets/images/projectdummy.webp'
+
 
 
 
@@ -10,6 +12,41 @@ const Projects = ():React.ReactElement=>{
     query: '(min-width: 800px)'
   })
 
+  const porfolio_data:PortfolioDisplayProp[] =[
+    {
+      accessVariant:isTab?'hover':'static',
+      code_url:'https://github.com/MARKOTHEDEV',
+      website_url:'https://www.youtube.com/',
+      stacks:['HTML','CSS'],
+      projectName:'DESIGN PORTFOLIO',
+      projectImage:Projectdummy
+    },
+    {
+      accessVariant:isTab?'hover':'static',
+      code_url:'https://github.com/MARKOTHEDEV',
+      website_url:'https://www.youtube.com/',
+      stacks:['HTML','CSS'],
+      projectName:'DESIGN PORTFOLIO',
+      projectImage:Projectdummy
+    },
+    {
+      accessVariant:isTab?'hover':'static',
+      code_url:'https://github.com/MARKOTHEDEV',
+      website_url:'https://www.youtube.com/',
+      stacks:['HTML','CSS'],
+      projectName:'DESIGN PORTFOLIO',
+      projectImage:Projectdummy
+    },
+    {
+      accessVariant:isTab?'hover':'static',
+      code_url:'https://github.com/MARKOTHEDEV',
+      website_url:'https://www.youtube.com/',
+      stacks:['HTML','CSS'],
+      projectName:'DESIGN PORTFOLIO',
+      projectImage:Projectdummy
+    },
+    
+  ]
   return (
     <ProjectsContainer>
 
@@ -22,10 +59,21 @@ const Projects = ():React.ReactElement=>{
       </ProjectsHeaderContainer>
       <br /><br />
       <ListOFProject>
-        <PortfolioDisplay accessVariant={isTab?'hover':'static'}/>
-        <PortfolioDisplay accessVariant={isTab?'hover':'static'}/>
-        <PortfolioDisplay accessVariant={isTab?'hover':'static'}/>
-        <PortfolioDisplay accessVariant={isTab?'hover':'static'}/>
+        {
+          porfolio_data.map((data,index)=>(
+            <PortfolioDisplay 
+              key={index}
+              stacks={data.stacks}
+              code_url={data.code_url}
+              website_url={data.website_url}
+              accessVariant={data.accessVariant}
+              projectImage={data.projectImage}
+              projectName={data.projectName}
+            />
+          ))
+        }
+       
+        
         
       </ListOFProject>
 

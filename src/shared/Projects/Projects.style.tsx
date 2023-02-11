@@ -32,11 +32,11 @@ export const ProjectsHeaderContainer = styled.div`
 `
 
 export const ListOFProject =styled.div`
+display: grid;
+gap: 30px 10px;
 
 @media screen and (min-width: 500px){
-    display: grid;
     grid-template-columns: repeat(2,1fr);
-    gap: 10px;
 }
 @media screen and (min-width: 600px){
     gap:30px 30px;

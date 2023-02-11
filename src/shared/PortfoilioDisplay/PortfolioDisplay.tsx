@@ -3,45 +3,85 @@ import Projectdummy from '../../assets/images/projectdummy.webp'
 import UnderLineSpan from '../UnderLineSpan/UnderLineSpan'
 
 
-type Prop ={
-  accessVariant?:'hover'|'static'
+export type PortfolioDisplayProp ={
+  accessVariant?:'hover'|'static',
+  code_url?:string;
+  website_url?:string;
+  stacks?:string[];
+  projectName:string;
+  projectImage:string
 }
-const PortfolioDisplay = ({accessVariant='static'}:Prop):React.ReactElement=>{
+const PortfolioDisplay = ({projectName,projectImage,accessVariant='static',code_url,website_url,stacks=[]}:PortfolioDisplayProp):React.ReactElement=>{
 
+  const openNewRoute=(e:React.MouseEvent,url:string)=>{
+    e.preventDefault()
+    window.open(url,'_blank')
+  }
   return (
     <PortfolioDisplayContainer>
       <MainPortfolioImageContainer>
-        <img src={Projectdummy} alt="" />
+        <img src={projectImage} alt="" />
         {
           accessVariant=='hover'?
             <PortfolioImageCover className='PortfolioImageCover'>
-              <UnderLineSpan giveSpace small_border={true} >
-                <p>VIEW PROJECT </p>
-              </UnderLineSpan>
+              {
+                website_url?
+                  <UnderLineSpan giveSpace small_border={true} >
+                    <p
+                      onClick={e=>{
+                        openNewRoute(e,website_url)
+                      }}
+                    >VIEW PROJECT </p>
+                  </UnderLineSpan>:''
+              }
 
-              <UnderLineSpan giveSpace small_border={true} >
-                <p>VIEW CODE</p>
-              </UnderLineSpan>
+              {
+                code_url?
+                  <UnderLineSpan giveSpace small_border={true} >
+                    <p
+                      onClick={e=>{
+                        openNewRoute(e,code_url)
+                      }}
+                    >VIEW CODE</p>
+                  </UnderLineSpan>:''
+              }
             </PortfolioImageCover>:''
         }
       </MainPortfolioImageContainer>
         
 
       <PortfolioContent>
-        <h2>DESIGN PORTFOLIO</h2>
+        <h2>{projectName}</h2>
         <div className='porfolio_techs'>
-          <p>HTML</p>
-          <p>CSS</p>
+          {
+            stacks.map((d:string,index:number)=> <p key={index}>{d}</p>)
+          }
         </div>
         {
           accessVariant=='static'?
             <div className='porfolio_view_container'>
-              <UnderLineSpan giveSpace small_border={true} >
-                <p>VIEW PROJECT </p>
-              </UnderLineSpan>
-              <UnderLineSpan giveSpace small_border={true} >
-                <p>VIEW CODE</p>
-              </UnderLineSpan>
+              {
+                code_url?
+                  <UnderLineSpan
+                    
+                    giveSpace small_border={true} >
+                    <p
+                      onClick={e=>{
+                        openNewRoute(e,code_url)
+                      }}
+                    >VIEW PROJECT </p>
+                  </UnderLineSpan>:''
+              }
+              {
+                website_url?
+                  <UnderLineSpan giveSpace small_border={true} >
+                    <p
+                      onClick={e=>{
+                        openNewRoute(e,website_url)
+                      }}
+                    >VIEW CODE</p>
+                  </UnderLineSpan>:''
+              }
             </div>:''
         }
       </PortfolioContent>

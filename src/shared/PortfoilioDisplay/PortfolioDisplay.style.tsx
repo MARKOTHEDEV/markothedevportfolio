@@ -71,6 +71,7 @@ letter-spacing: 1px;
     p{
 letter-spacing: 1px;
         font-size: .9rem;
+        cursor: pointer;
         
     }
 

@@ -1,11 +1,12 @@
 import React from 'react';
 import { useMediaQuery } from 'react-responsive';
 import GeneralLayout from './layout/GeneralLayout/GeneralLayout';
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import Projects from './shared/Projects/Projects';
 import GroupOfSkills from './shared/GroupOfSkills/GroupOfSkills';
 import HeroSection from './shared/HeroSection/HeroSection';
 import Line from './shared/Line/Line';
+import Contact from './shared/Contact/Contact';
 
 function App() {
 
@@ -33,7 +34,11 @@ function App() {
     {
       title:'Django',
       yearsOfExp:2,
-    }
+    },
+    {
+      title:'NextJS',
+      yearsOfExp:2,
+    },
   ]
   const isTab = useMediaQuery({
     query: '(min-width: 600px)'
@@ -66,7 +71,6 @@ function App() {
       }
       <br />
       <Projects/>
-
     </GeneralLayout>
   );
 }

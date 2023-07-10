@@ -1,3 +1,4 @@
+import Contact from '../../shared/Contact/Contact'
 import Nav from '../../shared/Nav/Nav'
 import { GeneralLayoutContainer } from './GeneralLayout.style'
 
@@ -11,13 +12,19 @@ const GeneralLayout = ({ children }:Prop):React.ReactElement=>{
 
 
   return (
-    <GeneralLayoutContainer>
-      {/* nav goes here */}
-      <Nav/>
-      {
-        children
-      }
-    </GeneralLayoutContainer>
+    <div>
+
+      <GeneralLayoutContainer>
+        {/* nav goes here */}
+        <Nav/>
+        {
+          children
+        }
+
+      </GeneralLayoutContainer>
+      <Contact />
+
+    </div>
   )
 }
 

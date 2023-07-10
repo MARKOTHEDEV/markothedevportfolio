@@ -7,7 +7,8 @@ export const theme = {
   'green':'#4EE1A0',
   'ash':'#d9d9d9',
   'light':'#FFFFFF',
-  'maxWidth':'1000px'
+  'maxWidth':'1000px',
+  'red':'#FF6F5B'
 }
 
 export const GlobalStyles = createGlobalStyle`

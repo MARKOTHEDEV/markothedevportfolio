@@ -11,7 +11,7 @@ type Prop ={
 const InputWithLabel = ({errorMessage,label,register,is_textarea}:Prop)=>{
 
   return (
-    <>
+    <div>
       {
         is_textarea?
           <TextAreaWithLabelContainer
@@ -27,8 +27,9 @@ const InputWithLabel = ({errorMessage,label,register,is_textarea}:Prop)=>{
             placeholder={label}
             {...register}
           />
-      }    
-    </>
+      }   
+      <span style={{'color':'#FF6F5B','textAlign':'right','display':'block','paddingTop':'.4rem'}}>{errorMessage}</span> 
+    </div>
   )
 }
 

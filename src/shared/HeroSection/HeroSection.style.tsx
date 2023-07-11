@@ -17,13 +17,18 @@ export const HeroSectionContainer = styled.div`
         display:block;
         height: 100%;
         width: 100%;
+        filter: grayscale(100%);
     }
     .marko_img{
         margin:0 auto;
-        transform:translateY(-100px);
+        margin-bottom: 100px;
+        /* transform:translateY(-500px); */
         width:200px;
         position: relative;
+        /* transform: translateY(-200px); */
     }
+    /* .marko_img .is_desk_main_img{
+    } */
     @media screen and (min-width: 600px) {
         /* border: 1px solid red; */
         display: flex;

@@ -1,6 +1,7 @@
 import { HeroContentContainer, HeroSectionContainer } from './HeroSection.style'
 import DevPic from '../../assets/images/image-profile-mobile.webp'
-import DevPicDesktop from '../../assets/images/image-profile-desktop.webp'
+// import DevPicDesktop from '../../assets/images/image-profile-desktop.webp'
+import markopics from '../../assets/images/markothedev.jpg'
 import UnderLineSpan from '../UnderLineSpan/UnderLineSpan'
 import { useMediaQuery } from 'react-responsive'
 import HalfCirlceImg from '../../assets/images/pattern-circle.svg'
@@ -17,7 +18,12 @@ const HeroSection =():React.ReactElement=>{
   return (
     <HeroSectionContainer>
       <div className='marko_img'>
-        <img src={isDesktop?DevPicDesktop:DevPic}  alt="markothedev pics" />
+        {
+          isDesktop?
+            <img src={markopics}  className='is_desk_main_img' alt="markothedev pics" />
+            :
+            <img src={markopics}  alt="markothedev pics" />
+        }
         {
           isTab?
             <img src={HalfCirlceImg} className='latop_circle' alt="" />

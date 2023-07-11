@@ -8,6 +8,10 @@ import Nav from '../Nav/Nav';
 import Line from '../Line/Line';
 import UnderLineSpan from '../UnderLineSpan/UnderLineSpan';
 import Button from '../Button/Button';
+import { useMutation } from '@tanstack/react-query';
+import { sendMail } from '../../api/mail.api';
+import { toast } from 'react-hot-toast';
+import Preloader from '../Preloader/Preloader';
 
 
 const schema = yup.object({
@@ -20,7 +24,15 @@ type ContactFormType = yup.InferType<typeof schema>
 
 const Contact = ()=>{
 
- 
+  const {isLoading,mutate} = useMutation(sendMail,{
+    'onSuccess':(d)=>{
+      toast.success('Markothedev will get back to you soon')
+    },
+    'onError':(d)=>{
+      toast.error('Something seem to be wrong with your network, please try again champ!.')
+    },
+  })
+  
   const { 
     register,setValue, 
     handleSubmit,control,
@@ -28,7 +40,7 @@ const Contact = ()=>{
   } = useForm<ContactFormType>({ resolver: yupResolver(schema) });
 
   const onSubmit=(data:ContactFormType)=>{
-    console.log(data)
+    mutate(data)
   }
   return (
     <ContactContainer>
@@ -39,6 +51,7 @@ const Contact = ()=>{
         I would love to hear about your project and how I could help. Please fill in the form, and I’ll get back to you as soon as possible.
           </p>
         </div>
+        <Preloader loading={isLoading} />
         <form 
           onSubmit={handleSubmit(onSubmit)}
         >

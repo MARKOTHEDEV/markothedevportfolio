@@ -6,8 +6,7 @@ import Projects from './shared/Projects/Projects';
 import GroupOfSkills from './shared/GroupOfSkills/GroupOfSkills';
 import HeroSection from './shared/HeroSection/HeroSection';
 import Line from './shared/Line/Line';
-import Contact from './shared/Contact/Contact';
-
+import { Toaster } from 'react-hot-toast';
 function App() {
 
   const skills = [
@@ -43,9 +42,10 @@ function App() {
   const isTab = useMediaQuery({
     query: '(min-width: 600px)'
   })
+
   return (
     <GeneralLayout>
-
+      <Toaster />
       <HeroSection/>
       {
         !isTab?

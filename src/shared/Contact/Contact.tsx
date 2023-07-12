@@ -36,11 +36,12 @@ const Contact = ()=>{
   const { 
     register,setValue, 
     handleSubmit,control,
-    formState: { errors },
+    formState: { errors },reset
   } = useForm<ContactFormType>({ resolver: yupResolver(schema) });
 
   const onSubmit=(data:ContactFormType)=>{
     mutate(data)
+    reset()
   }
   return (
     <ContactContainer>

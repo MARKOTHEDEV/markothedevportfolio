@@ -1,6 +1,7 @@
 import { MainPortfolioImageContainer,PortfolioImageCover, PortfolioContent, PortfolioDisplayContainer } from './PortfolioDisplay.style'
 import Projectdummy from '../../assets/images/projectdummy.webp'
 import UnderLineSpan from '../UnderLineSpan/UnderLineSpan'
+import { toast } from 'react-hot-toast';
 
 
 export type PortfolioDisplayProp ={
@@ -13,8 +14,16 @@ export type PortfolioDisplayProp ={
 }
 const PortfolioDisplay = ({projectName,projectImage,accessVariant='static',code_url,website_url,stacks=[]}:PortfolioDisplayProp):React.ReactElement=>{
 
-  const openNewRoute=(e:React.MouseEvent,url:string)=>{
+  const openNewRoute=(e:React.MouseEvent,url:string,link_type:'code'|'website'='website')=>{
     e.preventDefault()
+    if(url=='#'){
+      if(link_type==='website'){
+        toast.error('Coming soon...')
+      }else{
+        toast.error('Sorry the code is private')
+      }
+      return
+    }
     window.open(url,'_blank')
   }
   return (
@@ -40,7 +49,7 @@ const PortfolioDisplay = ({projectName,projectImage,accessVariant='static',code_
                   <UnderLineSpan giveSpace small_border={true} >
                     <p
                       onClick={e=>{
-                        openNewRoute(e,code_url)
+                        openNewRoute(e,code_url,'code')
                       }}
                     >VIEW CODE</p>
                   </UnderLineSpan>:''
@@ -54,7 +63,7 @@ const PortfolioDisplay = ({projectName,projectImage,accessVariant='static',code_
         <h2>{projectName}</h2>
         <div className='porfolio_techs'>
           {
-            stacks.map((d:string,index:number)=> <p key={index}>{d}</p>)
+            stacks.map((d:string,index:number)=> <p key={index}>{d.toUpperCase()}</p>)
           }
         </div>
         {

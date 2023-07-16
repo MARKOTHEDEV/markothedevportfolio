@@ -3,10 +3,10 @@ import PortfolioDisplay, { PortfolioDisplayProp } from '../PortfoilioDisplay/Por
 import UnderLineSpan from '../UnderLineSpan/UnderLineSpan'
 import { ListOFProject, ProjectsContainer, ProjectsHeaderContainer } from './Projects.style'
 import Projectdummy from '../../assets/images/projectdummy.webp'
-
-
-
-
+import checkidImg from '../../assets/images/checkid.jpg'
+import EmetricImg  from '../../assets/images/emetricsuite.jpg'
+import meticapp from '../../assets/images/metic.jpg'
+import manna from '../../assets/images/mannaexpress.jpg'
 const Projects = ():React.ReactElement=>{
   const isTab = useMediaQuery({
     query: '(min-width: 800px)'
@@ -15,35 +15,35 @@ const Projects = ():React.ReactElement=>{
   const porfolio_data:PortfolioDisplayProp[] =[
     {
       accessVariant:isTab?'hover':'static',
-      code_url:'https://github.com/MARKOTHEDEV',
-      website_url:'https://www.youtube.com/',
-      stacks:['HTML','CSS'],
-      projectName:'DESIGN PORTFOLIO',
-      projectImage:Projectdummy
+      code_url:'#',
+      website_url:'https://app.checkid.ng/signin',
+      stacks:['stitches','NEXTJS','REACT QUERY'],
+      projectName:'CHECKID',
+      projectImage:checkidImg
     },
     {
       accessVariant:isTab?'hover':'static',
-      code_url:'https://github.com/MARKOTHEDEV',
-      website_url:'https://www.youtube.com/',
-      stacks:['HTML','CSS'],
-      projectName:'DESIGN PORTFOLIO',
-      projectImage:Projectdummy
+      code_url:'#',
+      website_url:'http://emetricsuite.com/',
+      stacks:['styled-components.com','NEXTJS'],
+      projectName:'Emetric Suite Landing Page',
+      projectImage:EmetricImg
     },
     {
       accessVariant:isTab?'hover':'static',
-      code_url:'https://github.com/MARKOTHEDEV',
-      website_url:'https://www.youtube.com/',
-      stacks:['HTML','CSS'],
-      projectName:'DESIGN PORTFOLIO',
-      projectImage:Projectdummy
+      code_url:'#',
+      website_url:'#',
+      stacks:['NEXTJS','stitches','REACT QUERY','ZUSTAND','PostgreSQL','django-restframework','redis',],
+      projectName:'MANNA EXPRESS',
+      projectImage:manna
     },
     {
       accessVariant:isTab?'hover':'static',
-      code_url:'https://github.com/MARKOTHEDEV',
-      website_url:'https://www.youtube.com/',
-      stacks:['HTML','CSS'],
-      projectName:'DESIGN PORTFOLIO',
-      projectImage:Projectdummy
+      code_url:'#',
+      website_url:'https://app.emetricsuite.com/',
+      stacks:['REDUX TOOLKIT','REACT','CHAKRA UI','DJANGO REST FRAMEWORK','REDIS','PostgreSQL'],
+      projectName:'Emetric Suite web app(only desktop)',
+      projectImage:meticapp
     },
     
   ]

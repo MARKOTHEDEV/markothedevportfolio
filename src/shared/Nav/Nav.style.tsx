@@ -22,7 +22,9 @@ export const NavContainer = styled.div`
         width: 53%;
         margin: 0 auto  ;
     }
-
+    img{
+        cursor: pointer;
+    }
 
     @media screen and (min-width: 500px){
         /* padding: 1.3rem 1.2rem; */

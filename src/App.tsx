@@ -32,7 +32,7 @@ function App() {
     },
     {
       title:'Django',
-      yearsOfExp:2,
+      yearsOfExp:3,
     },
     {
       title:'NextJS',

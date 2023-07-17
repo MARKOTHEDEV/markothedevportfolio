@@ -29,14 +29,7 @@ const Projects = ():React.ReactElement=>{
       projectName:'Emetric Suite Landing Page',
       projectImage:EmetricImg
     },
-    {
-      accessVariant:isTab?'hover':'static',
-      code_url:'#',
-      website_url:'#',
-      stacks:['NEXTJS','stitches','REACT QUERY','ZUSTAND','PostgreSQL','django-restframework','redis',],
-      projectName:'MANNA EXPRESS',
-      projectImage:manna
-    },
+
     {
       accessVariant:isTab?'hover':'static',
       code_url:'#',
@@ -45,7 +38,14 @@ const Projects = ():React.ReactElement=>{
       projectName:'Emetric Suite web app(only desktop)',
       projectImage:meticapp
     },
-    
+    {
+      accessVariant:isTab?'hover':'static',
+      code_url:'#',
+      website_url:'#',
+      stacks:['NEXTJS','stitches','REACT QUERY','ZUSTAND','PostgreSQL','django-restframework','redis',],
+      projectName:'MANNA EXPRESS',
+      projectImage:manna
+    },    
   ]
   return (
     <ProjectsContainer>

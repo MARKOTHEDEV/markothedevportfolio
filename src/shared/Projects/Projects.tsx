@@ -16,7 +16,7 @@ const Projects = ():React.ReactElement=>{
     {
       accessVariant:isTab?'hover':'static',
       code_url:'#',
-      website_url:'https://app.checkid.ng/signin',
+      website_url:'https://checkid.ng/',
       stacks:['stitches','NEXTJS','REACT QUERY'],
       projectName:'CHECKID',
       projectImage:checkidImg

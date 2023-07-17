@@ -70,23 +70,24 @@ const PortfolioDisplay = ({projectName,projectImage,accessVariant='static',code_
           accessVariant=='static'?
             <div className='porfolio_view_container'>
               {
-                code_url?
+                website_url?
                   <UnderLineSpan
                     
                     giveSpace small_border={true} >
                     <p
                       onClick={e=>{
-                        openNewRoute(e,code_url)
+                        openNewRoute(e,website_url)
                       }}
                     >VIEW PROJECT </p>
                   </UnderLineSpan>:''
               }
               {
-                website_url?
+                code_url?
                   <UnderLineSpan giveSpace small_border={true} >
                     <p
                       onClick={e=>{
-                        openNewRoute(e,website_url)
+
+                        openNewRoute(e,code_url,'code')
                       }}
                     >VIEW CODE</p>
                   </UnderLineSpan>:''

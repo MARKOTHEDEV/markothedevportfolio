@@ -24,7 +24,7 @@ function App() {
     },
     {
       title:'React',
-      yearsOfExp:2,
+      yearsOfExp:3,
     },
     {
       title:'Python',
@@ -36,7 +36,7 @@ function App() {
     },
     {
       title:'NextJS',
-      yearsOfExp:2,
+      yearsOfExp:3,
     },
   ]
   const isTab = useMediaQuery({

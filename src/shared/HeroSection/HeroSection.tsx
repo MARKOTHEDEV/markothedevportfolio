@@ -45,11 +45,11 @@ const HeroSection =():React.ReactElement=>{
             Based in the Nigeria, I’m a front-end developer passionate about building accessible web apps that users love.
         </p>
 
-        <p className='contact'>
+        <a className='contact' href='mailto:markothedevmail@gmail.com'>
           <UnderLineSpan small_border={true} giveSpace={true}>
           CONTACT ME
           </UnderLineSpan>
-        </p>
+        </a>
       </HeroContentContainer>
 
     </HeroSectionContainer>

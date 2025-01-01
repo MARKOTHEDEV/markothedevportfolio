@@ -28,7 +28,7 @@
     //     "windows"
     // ],
     "linebreak-style": 0,
-    "quotes": ["error"],
+    // "quotes": ["error", "single", "doublequote"],
     "semi": 0,
     "react/react-in-jsx-scope": "off",
     "@typescript-eslint/ban-types": [
